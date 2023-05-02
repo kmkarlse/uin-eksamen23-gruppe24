@@ -1,3 +1,141 @@
+@import "./examvariables";
+
 * {
-    color: green;
+    color: black;
+    border: 1px dotted red;
+    text-decoration: none;
+    margin: 0;
 }
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    h2 {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .dash {
+        max-width: $maxwidth;
+
+        margin: 0 auto;
+
+        //styling for knapper hentet fra https://markodenic.com/tools/buttons-generator/
+        a {
+            max-width: 90px;
+            height: 20px;
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            outline: none;
+            border-radius: 5px;
+            border: 2px solid #212529;
+            background: #212529;
+        }
+
+        a:hover {
+            background: #fff;
+            color: #212529
+        }
+
+        p {
+            max-height: 20px;
+        }
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: $headerfont;
+        
+        h1 {
+            margin: 0;
+        }
+          
+        nav {
+            margin: 0;
+        }
+          
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+          
+        ul li {
+            margin-right: 10px;
+        }
+          
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    .gameshop {
+        background-color: $light-grey;
+        padding: 5px;
+      
+        .section-header {
+          display: flex;
+          align-items: center;
+          max-height: 90px;
+        }
+      
+        .gameshop-article {
+            display: flex;
+            margin-top: 20px;
+            align-items: center;
+          
+            .game-article {
+              display: flex;
+              align-items: center;
+          
+              img {
+                max-width: 200px;
+                height: 250px;
+                margin-right: 20px;
+              }
+          
+              .text-content {
+                display: flex;
+                flex-direction: column;
+          
+                h2 {
+                  margin: 0;
+                }
+          
+                p {
+                  margin: 0;
+                }
+              }
+            }
+          }
+      }
+      
+      .mygames {
+      
+        h2 {
+          max-width: 400px;
+          text-align: center;
+          padding: 10px;
+          margin: 10px;
+        }
+      
+        article {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 1080px;
+        }
+      }
+    
+}
+
+

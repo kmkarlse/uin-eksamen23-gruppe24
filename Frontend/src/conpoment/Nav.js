@@ -3,15 +3,13 @@ import { Link } from "react-router-dom"
 export default function Nav() {
     return (
         <>
-            <Link to="/">
-                <h1>Gamehub</h1>
-            </Link>
+            <Link to="/">Gamehub</Link>
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>My Games</li>
-                    <li>My fav</li>
-                    <li>Game shop</li>
+                    <Link to="/">Home</Link>
+                    <Link to="GameShop">MyGames</Link>
+                    <Link to="MyFavorites">MyFavorites</Link>
+                    <Link to="MyGames">GameShop</Link>
                 </ul>
             </nav>
         </>

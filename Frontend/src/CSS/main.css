@@ -2,6 +2,9 @@
 .headerfont {
   font-family: "Kanit", sans-serif;
   font-weight: 700;
+  font-size: 35px;
+  margin: 10px;
+  color: white;
 }
 
 .textfont, body {
@@ -43,12 +46,13 @@ body h2 {
 }
 body .dash {
   max-width: 1200px;
+  text-align: center;
   margin: 0 auto;
 }
 body .dash a {
   max-width: 90px;
   height: 20px;
-  color: #fff;
+  color: #ffffff;
   padding: 5px 10px;
   font-weight: bold;
   cursor: pointer;
@@ -61,40 +65,33 @@ body .dash a {
   background: #212529;
 }
 body .dash a:hover {
-  background: #fff;
+  background: #ffffff;
   color: #212529;
-}
-body .dash p {
-  max-height: 20px;
 }
 body header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: "Kanit", sans-serif;
-}
-body header h1 {
-  margin: 0;
+  margin-bottom: 15px;
+  background-color: #000000;
 }
 body header nav {
   margin: 0;
 }
-body header ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-body header ul li {
+body header a {
   margin-right: 10px;
+  color: #ffffff;
 }
-body header nav ul {
+body header nav {
   display: flex;
   justify-content: flex-end;
 }
 body .gameshop {
   background-color: #f3f3f3;
   padding: 5px;
+  max-width: 1200px;
+  margin-bottom: 15px;
 }
 body .gameshop .section-header {
   display: flex;
@@ -105,36 +102,139 @@ body .gameshop .gameshop-article {
   display: flex;
   margin-top: 20px;
   align-items: center;
+  justify-content: space-between;
 }
 body .gameshop .gameshop-article .game-article {
   display: flex;
   align-items: center;
+  margin: 5px;
 }
 body .gameshop .gameshop-article .game-article img {
   max-width: 200px;
-  height: 250px;
+  height: 275px;
   margin-right: 20px;
 }
 body .gameshop .gameshop-article .game-article .text-content {
   display: flex;
   flex-direction: column;
+  height: 275px;
+  margin: 5px;
 }
 body .gameshop .gameshop-article .game-article .text-content h2 {
   margin: 0;
+  height: 150px;
+  margin-bottom: 10px;
 }
 body .gameshop .gameshop-article .game-article .text-content p {
   margin: 0;
+  margin-bottom: 10px;
 }
-body .mygames h2 {
-  max-width: 400px;
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
+body .gameshop .gameshop-article .game-article .text-content a {
+  margin: 0;
 }
-body .mygames article {
+body .gameshop-site {
+  background-color: #f3f3f3;
+  padding: 5px;
+  max-width: 1200px;
+  margin-bottom: 15px;
+}
+body .gameshop-site .section-header {
+  display: flex;
+  align-items: center;
+  max-height: 90px;
+}
+body .gameshop-site .gameshop-article {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1080px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+body .gameshop-site .gameshop-article .game-article {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+body .gameshop-site .gameshop-article .game-article img {
+  max-width: 200px;
+  height: 275px;
+  margin-right: 20px;
+}
+body .gameshop-site .gameshop-article .game-article .text-content {
+  display: flex;
+  flex-direction: column;
+  height: 275px;
+  margin: 5px;
+}
+body .gameshop-site .gameshop-article .game-article .text-content h2 {
+  margin: 0;
+  height: 150px;
+  margin-bottom: 10px;
+}
+body .gameshop-site .gameshop-article .game-article .text-content p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+body .gameshop-site .gameshop-article .game-article .text-content a {
+  margin: 0;
+}
+body .mygames {
+  float: left;
+  width: 65%;
+}
+body .mygames .mygames-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+body .mygames .mygames-container .mygames-item {
+  max-width: 330px;
+  margin: 0 auto;
+  background-color: #f3f3f3;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body .mygames .mygames-container .mygames-item img {
+  max-width: 325px;
+}
+body .mygames-site {
+  margin: 0 auto;
+}
+body .mygames-site .mygames-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+body .mygames-site .mygames-container .mygames-item {
+  max-width: 330px;
+  margin: 0 auto;
+  background-color: #f3f3f3;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body .mygames-site .mygames-container .mygames-item img {
+  max-width: 325px;
+}
+body aside {
+  float: right;
+  width: 30%;
+  border-left: 1px solid black;
+  padding-left: 20px;
+}
+body aside .favorite-container {
+  display: flex;
+  flex-direction: column;
+}
+body aside .favorite-container .favorite-item {
+  background-color: #f3f3f3;
+  margin: 10px auto;
+}
+body aside .favorite-container .favorite-item img {
+  max-width: 330px;
+}
+body aside .favorite-container .favorite-item div {
+  display: flex;
+  justify-content: center;
+}
+body aside .favorite-container .favorite-item .p-item {
+  margin: 5px;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvX2V4YW12YXJpYWJsZXMuc2NzcyIsIm1haW4uY3NzIiwiLi4vc2Fzcy9tYWluLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ1Esa0hBQUE7QUFLUjtFQUNJLGdDQUpZO0VBS1osZ0JBQUE7QUNKSjs7QURPQTtFQUNJLGlDQVJZO0VBU1osZ0JBQUE7QUNKSjs7QURNQTtFQUNJLGlDQVpZO0VBYVosZ0JBQUE7QUNISjs7QURLQTtFQUdJLGVBQUE7QUNKSjs7QURRQTtFQUNJLHNCQUFBO0FDTEo7O0FEU0E7RUFDSSw0QkFBQTtBQ05KOztBQ3hCQTtFQUNJLFlBQUE7RUFDQSxzQkFBQTtFQUNBLHFCQUFBO0VBQ0EsU0FBQTtBRDJCSjs7QUN4QkE7RUFDSSxzQkFBQTtFQUNBLGNBQUE7QUQyQko7QUN6Qkk7RUFDSSxhQUFBO0VBQ0EsWUFBQTtBRDJCUjtBQ3hCSTtFQUNJLGlCRmtDWTtFRWhDWixjQUFBO0FEeUJSO0FDdEJRO0VBQ0ksZUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0EscUJBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0FEd0JaO0FDckJRO0VBQ0ksZ0JBQUE7RUFDQSxjQUFBO0FEdUJaO0FDcEJRO0VBQ0ksZ0JBQUE7QURzQlo7QUNsQkk7RUFDSSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxtQkFBQTtFQUNBLGdDRm5EUTtBQ3VFaEI7QUNsQlE7RUFDSSxTQUFBO0FEb0JaO0FDakJRO0VBQ0ksU0FBQTtBRG1CWjtBQ2hCUTtFQUNJLGFBQUE7RUFDQSxnQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0FEa0JaO0FDZlE7RUFDSSxrQkFBQTtBRGlCWjtBQ2RRO0VBQ0ksYUFBQTtFQUNBLHlCQUFBO0FEZ0JaO0FDWkk7RUFDSSx5QkZ0Q1E7RUV1Q1IsWUFBQTtBRGNSO0FDWlE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBRGNWO0FDWFE7RUFDSSxhQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtBRGFaO0FDWFk7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7QURhZDtBQ1hjO0VBQ0UsZ0JBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7QURhaEI7QUNWYztFQUNFLGFBQUE7RUFDQSxzQkFBQTtBRFloQjtBQ1ZnQjtFQUNFLFNBQUE7QURZbEI7QUNUZ0I7RUFDRSxTQUFBO0FEV2xCO0FDRlE7RUFDRSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsYUFBQTtFQUNBLFlBQUE7QURJVjtBQ0RRO0VBQ0UsYUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBREdWIiwiZmlsZSI6Im1haW4uY3NzIn0= */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvX2V4YW12YXJpYWJsZXMuc2NzcyIsIm1haW4uY3NzIiwiLi4vc2Fzcy9tYWluLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ1Esa0hBQUE7QUFLUjtFQUNJLGdDQUpZO0VBS1osZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUNKSjs7QURPQTtFQUNJLGlDQVhZO0VBWVosZ0JBQUE7QUNKSjs7QURNQTtFQUNJLGlDQWZZO0VBZ0JaLGdCQUFBO0FDSEo7O0FES0E7RUFHSSxlQUFBO0FDSko7O0FEUUE7RUFDSSxzQkFBQTtBQ0xKOztBRFNBO0VBQ0ksNEJBQUE7QUNOSjs7QUMzQkE7RUFDSSxZQUFBO0VBQ0Esc0JBQUE7RUFDQSxxQkFBQTtFQUNBLFNBQUE7QUQ4Qko7O0FDM0JBO0VBQ0ksc0JBQUE7RUFDQSxjQUFBO0FEOEJKO0FDNUJJO0VBQ0ksYUFBQTtFQUNBLFlBQUE7QUQ4QlI7QUMzQkk7RUFDSSxpQkZxQ1k7RUVwQ1osa0JBQUE7RUFDQSxjQUFBO0FENkJSO0FDMUJRO0VBQ0ksZUFBQTtFQUNBLFlBQUE7RUFDQSxjRm1CSTtFRWxCSixpQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxxQkFBQTtFQUNBLGFBQUE7RUFDQSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7QUQ0Qlo7QUN6QlE7RUFDSSxtQkZLSTtFRUpKLGNBQUE7QUQyQlo7QUN0Qkk7RUFDSSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxtQkFBQTtFQUNBLGdDRmhEUTtFRWlEUixtQkFBQTtFQUNBLHlCRlJRO0FDZ0NoQjtBQ3RCUTtFQUNJLFNBQUE7QUR3Qlo7QUNyQlE7RUFDSSxrQkFBQTtFQUNBLGNGZkk7QUNzQ2hCO0FDcEJRO0VBQ0ksYUFBQTtFQUNBLHlCQUFBO0FEc0JaO0FDbEJJO0VBQ0UseUJGeEJVO0VFeUJWLFlBQUE7RUFDQSxpQkZqQmM7RUVrQmQsbUJBQUE7QURvQk47QUNsQk07RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBRG9CUjtBQ2pCTTtFQUNFLGFBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7QURtQlI7QUNqQlE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxXQUFBO0FEbUJWO0FDakJVO0VBQ0UsZ0JBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7QURtQlo7QUNoQlU7RUFDRSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtBRGtCWjtBQ2hCWTtFQUNFLFNBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7QURrQmQ7QUNmWTtFQUNFLFNBQUE7RUFDQSxtQkFBQTtBRGlCZDtBQ2RZO0VBQ0UsU0FBQTtBRGdCZDtBQ1RJO0VBQ0UseUJGOUVVO0VFK0VWLFlBQUE7RUFDQSxpQkZ2RWM7RUV3RWQsbUJBQUE7QURXTjtBQ1RNO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7QURXUjtBQ1JNO0VBQ0UsYUFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLDhCQUFBO0FEVVI7QUNSUTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7QURVVjtBQ1JVO0VBQ0UsZ0JBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7QURVWjtBQ1BVO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsYUFBQTtFQUNBLFdBQUE7QURTWjtBQ1BZO0VBQ0UsU0FBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtBRFNkO0FDTlk7RUFDRSxTQUFBO0VBQ0EsbUJBQUE7QURRZDtBQ0xZO0VBQ0UsU0FBQTtBRE9kO0FDQU07RUFDRSxXQUFBO0VBQ0EsVUFBQTtBREVSO0FDQVE7RUFDRSxhQUFBO0VBQ0EsZUFBQTtBREVWO0FDQ1U7RUFDSSxnQkFBQTtFQUNBLGNBQUE7RUFDQSx5QkYvSUU7RUVnSkYsZ0JBQUE7RUFDQSxtQkFBQTtBRENkO0FDQ1k7RUFDRSxnQkFBQTtBRENkO0FDTU07RUFDRSxjQUFBO0FESlI7QUNNUTtFQUNFLGFBQUE7RUFDQSxlQUFBO0FESlY7QUNPVTtFQUNJLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHlCRnRLRTtFRXVLRixnQkFBQTtFQUNBLG1CQUFBO0FETGQ7QUNPWTtFQUNFLGdCQUFBO0FETGQ7QUNZTTtFQUNFLFlBQUE7RUFDQSxVQUFBO0VBQ0EsNEJBQUE7RUFDQSxrQkFBQTtBRFZSO0FDWVE7RUFDRSxhQUFBO0VBQ0Esc0JBQUE7QURWVjtBQ2FVO0VBQ0kseUJGOUxFO0VFK0xGLGlCQUFBO0FEWGQ7QUNhWTtFQUNFLGdCQUFBO0FEWGQ7QUNjWTtFQUNFLGFBQUE7RUFDQSx1QkFBQTtBRFpkO0FDZVk7RUFDRSxXQUFBO0FEYmQiLCJmaWxlIjoibWFpbi5jc3MifQ== */

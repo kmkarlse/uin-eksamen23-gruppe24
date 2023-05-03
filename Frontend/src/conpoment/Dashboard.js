@@ -166,9 +166,9 @@ export default function Dashboard() {
             </section>
             <section className="mygames">
                 <h2>My Games-Library  {mygames.length} games</h2>
-                <article>
-                    {mygames.map((game) => (
-                        <article>
+                <article className="mygames-container">
+                    {mygames.slice(0,4).map((game) => (
+                        <article className="mygames-item">
                             <img alt={game.title} src={game.img} />
                             <h2>{game.title}</h2>
                         </article>
@@ -177,13 +177,17 @@ export default function Dashboard() {
             </section>
             <aside>
                 <h2>MY FAVORITES</h2>
-                {mygames.map((game) => (
-                    <article>
-                        <h2>{game.title}</h2>
-                        <p>{game.genres.map((genre) => <p>{genre}</p>)}</p>
-                        <img alt={game.title} src={game.img}></img>
-                    </article>
-                ))}
+                <article className="favorite-container">
+                  {mygames.filter(game => game.fav).map((game) => (
+                      <article className="favorite-item">
+                          <h2>{game.title}</h2>
+                          <div>
+                            {game.genres.map((genre) => <p className="p-item">{genre}</p>)}
+                          </div>
+                          <img alt={game.title} src={game.img}></img>
+                      </article>
+                  ))}
+                </article>
             </aside>
         </section>
     )

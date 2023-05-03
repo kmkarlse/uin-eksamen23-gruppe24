@@ -1,260 +1,290 @@
 @import "./examvariables";
 
 * {
-    color: black;
-    border: 1px dotted red;
-    text-decoration: none;
-    margin: 0;
+  color: black;
+  text-decoration: none;
+  margin: 0;
 }
 
 body {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  h2 {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .dash {
+    max-width: $maxwidth;
+    text-align: center;
     margin: 0 auto;
 
-    h2 {
-        padding: 10px;
-        margin: 10px;
+    //styling for knapper hentet fra https://markodenic.com/tools/buttons-generator/
+    .button {
+      height: 20px;
+      color: $white;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      outline: none;
+      border-radius: 5px;
+      border: 2px solid #212529;
+      background: #212529;
     }
 
-    .dash {
-        max-width: $maxwidth;
-        text-align: center;
-        margin: 0 auto;
+    .button:hover {
+      background: $white;
+      color: #212529;
+    }
+  }
 
-        //styling for knapper hentet fra https://markodenic.com/tools/buttons-generator/
-        a {
-            max-width: 90px;
-            height: 20px;
-            color: $white;
-            padding: 5px 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            display: inline-block;
-            outline: none;
-            border-radius: 5px;
-            border: 2px solid #212529;
-            background: #212529;
-        }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $headerfont;
+    margin-bottom: 15px;
+    background-color: $black;
 
-        a:hover {
-            background: $white;
-            color: #212529
-        }
-
+    nav {
+      margin: 0;
     }
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: $headerfont;
-        margin-bottom: 15px;
-        background-color: $black;
-          
-        nav {
-            margin: 0;
-        }
-                   
-        a {
-            margin-right: 10px;
-            color: $white;
-        }
-          
-        nav  {
-            display: flex;
-            justify-content: flex-end;
-        }
+    a {
+      margin-right: 10px;
+      color: $white;
     }
 
-    .gameshop {
-      background-color: $light-grey;
-      padding: 5px;
-      max-width: $maxwidth;
-      margin-bottom: 15px;
-    
-      .section-header {
-        display: flex;
-        align-items: center;
-        max-height: 90px;
-      }
-    
-      .gameshop-article {
-        display: flex;
-        margin-top: 20px;
-        align-items: center;
-        justify-content: space-between;
-    
-        .game-article {
-          display: flex;
-          align-items: center;
-          margin: 5px;
-    
-          img {
-            max-width: 200px;
-            height: 275px;
-            margin-right: 20px; 
-          }
-    
-          .text-content {
-            display: flex;
-            flex-direction: column;
-            height: 275px;
-            margin: 5px;
-    
-            h2 {
-              margin: 0;
-              height: 150px;
-              margin-bottom: 10px;
-            }
-    
-            p {
-              margin: 0;
-              margin-bottom: 10px; 
-            }
-    
-            a {
-              margin: 0;
-            }
-          }
-        }
-      }
+    nav {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .gameshop {
+    background-color: $light-grey;
+    padding: 5px;
+    max-width: $maxwidth;
+    margin: 0 auto;
+
+    .section-header {
+      display: flex;
+      align-items: center;
     }
 
-    .gameshop-site {
-      background-color: $light-grey;
-      padding: 5px;
-      max-width: $maxwidth;
-      margin-bottom: 15px;
-    
-      .section-header {
+    .gameshop-article {
+      display: flex;
+      margin-top: 20px;
+      align-items: center;
+      justify-content: space-between;
+
+      .game-article {
         display: flex;
         align-items: center;
-        max-height: 90px;
-      }
-    
-      .gameshop-article {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 20px;
-        justify-content: space-between;
-    
-        .game-article {
-          display: flex;
-          align-items: center;
-          margin: 5px;
-    
-          img {
-            max-width: 200px;
-            height: 275px;
-            margin-right: 20px; 
-          }
-    
-          .text-content {
-            display: flex;
-            flex-direction: column;
-            height: 275px;
-            margin: 5px;
-    
-            h2 {
-              margin: 0;
-              height: 150px;
-              margin-bottom: 10px;
-            }
-    
-            p {
-              margin: 0;
-              margin-bottom: 10px; 
-            }
-    
-            a {
-              margin: 0;
-            }
-          }
+        margin: 5px;
+
+        img {
+          max-width: 200px;
+          height: 275px;
+          margin-right: 20px;
         }
-      }
-    }
-      
-      .mygames {
-        float: left;
-        width: 65%;
 
-        .mygames-container {
-          display: flex;
-          flex-wrap: wrap;
-
-
-          .mygames-item {
-              max-width: 330px;
-              margin: 0 auto;
-              background-color: $light-grey;
-              margin-top: 10px;
-              margin-bottom: 10px;
-
-            img {
-              max-width: 325px;
-            }
-          }
-          
-        }
-      }
-
-      .mygames-site {
-        margin: 0 auto;
-
-        .mygames-container {
-          display: flex;
-          flex-wrap: wrap;
-
-
-          .mygames-item {
-              max-width: 330px;
-              margin: 0 auto;
-              background-color: $light-grey;
-              margin-top: 10px;
-              margin-bottom: 10px;
-
-            img {
-              max-width: 325px;
-            }
-          }
-          
-        }
-      }
-
-      aside {
-        float: right;
-        width: 30%;
-        border-left: 1px solid black;
-        padding-left: 20px;
-
-        .favorite-container {
+        .text-content {
           display: flex;
           flex-direction: column;
+          height: 275px;
+          margin: 5px;
 
-
-          .favorite-item {
-              background-color: $light-grey ;
-              margin: 10px auto;
-
-            img {
-              max-width: 330px;
-            }
-
-            div {
-              display: flex;
-              justify-content: center;
-            }
-
-            .p-item {
-              margin: 5px;
-            }
+          h2 {
+            margin: 0;
+            height: 150px;
+            margin-bottom: 10px;
           }
-          
+
+          p {
+            margin: 0;
+            margin-bottom: 10px;
+          }
+
+          a {
+            margin: 0;
+          }
         }
       }
-    
+    }
+  }
+
+  .gameshop-site {
+    background-color: $light-grey;
+    padding: 5px;
+    max-width: $maxwidth;
+    margin-bottom: 15px;
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      max-height: 90px;
+    }
+
+    .gameshop-article {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      justify-content: space-between;
+
+      .game-article {
+        display: flex;
+        align-items: center;
+        margin: 0px auto;
+        max-width: 390px;
+        height: 355px;
+
+        img {
+          max-width: 200px;
+          height: 333px;
+        }
+
+        .text-content {
+          display: flex;
+          flex-direction: column;
+          height: 335px;
+          margin: 5px;
+
+          h2 {
+            margin: 0;
+            max-height: 200px;
+            height: 100%;
+            margin-bottom: 10px;
+          }
+
+          p {
+            margin: 0;
+            margin-bottom: 10px;
+          }
+
+          a {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .mygames {
+    float: left;
+    width: 65%;
+
+    .mygames-container {
+      display: flex;
+      flex-wrap: wrap;
+
+      .gamelink {
+        margin: 5px;
+      }
+
+      .mygames-item {
+        max-width: 330px;
+        margin: 0 auto;
+        background-color: $light-grey;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        img {
+          max-width: 325px;
+        }
+
+        div {
+          .p-item {
+            background-color: $dark-grey;
+            color: $white;
+            margin: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .mygames-site {
+    margin: 0 auto;
+
+    .mygames-container {
+      display: flex;
+      flex-wrap: wrap;
+
+      .mygames-item {
+        max-width: 330px;
+        margin: 0 auto;
+        background-color: $light-grey;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        img {
+          max-width: 325px;
+        }
+
+        div {
+          .p-item {
+            background-color: $dark-grey;
+            color: $white;
+            margin: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  aside {
+    float: right;
+    width: 30%;
+    border-left: 1px solid black;
+    padding-left: 20px;
+
+    .favorite-container {
+      display: flex;
+      flex-direction: column;
+
+      .favorite-item {
+        background-color: $light-grey;
+        margin: 10px auto;
+
+        img {
+          max-width: 330px;
+        }
+
+        div {
+          display: flex;
+          justify-content: center;
+          .p-item {
+            margin: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .fav-site {
+    max-width: $maxwidth;
+    margin: 0 auto;
+
+    .favorite-article {
+      display: flex;
+      flex-wrap: wrap;
+
+      .fav-item {
+        max-width: 330px;
+        margin: 0 auto;
+        background-color: $light-grey;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        img {
+          max-width: 325px;
+        }
+      }
+    }
+  }
 }
-
-

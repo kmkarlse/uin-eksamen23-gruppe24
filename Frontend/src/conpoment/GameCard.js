@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function GameCard({ title, img, genres }) {
   return (
     <article className="mygames-item">

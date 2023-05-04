@@ -1,14 +1,31 @@
 import { useParams } from "react-router-dom";
+import { mygames } from "../games";
 
-export default function GamePage({ mygames }) {
+export default function GamePage() {
   const { slug } = useParams();
-  const game = mygames.find(
-    (item) => item.title.replace(/\s/g, "_").toLowerCase() === slug
+  const game = mygames?.find(
+    (rec) => rec?.title.replace(/\s/g, "-").toLowerCase() === slug
   );
 
   return (
-    <section>
-      <h1>{game.title}</h1>
+    <section className="dash-gamepage">
+      <article className="gamepage-article">
+        <img alt={game.title} src={game.img} />
+        <div>
+          <h2>{game.title}</h2>
+
+          <div>
+            Kategori:
+            {game.genres.map((genre, index) => (
+              <p key={index}>{genre}</p>
+            ))}
+          </div>
+          <p>Utgitt: {game.released}</p>
+          <a className="button" href={game.link}>
+            Kjøp
+          </a>
+        </div>
+      </article>
     </section>
   );
 }

@@ -1,21 +1,17 @@
-export default function FavGameCard({ mygames }) {
+export default function FavGameCard({ title, img, genres }) {
   return (
     <article className="favorite-container">
-      {mygames
-        .filter((game) => game.fav)
-        .map((game, index) => (
-          <article key={index} className="favorite-item">
-            <h2>{game.title}</h2>
-            <div>
-              {game.genres.map((genre, index) => (
-                <p key={index} className="p-item">
-                  {genre}
-                </p>
-              ))}
-            </div>
-            <img alt={game.title} src={game.img}></img>
-          </article>
-        ))}
+      <article className="favorite-item">
+        <h2>{title}</h2>
+        <div>
+          {genres.map((genre, index) => (
+            <p key={index} className="p-item">
+              {genre}
+            </p>
+          ))}
+        </div>
+        <img alt={title} src={img}></img>
+      </article>
     </article>
   );
 }

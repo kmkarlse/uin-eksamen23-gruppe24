@@ -70,6 +70,7 @@ body {
     padding: 5px;
     max-width: $maxwidth;
     margin: 0 auto;
+    box-shadow: black 12px 12px 43px;
 
     .section-header {
       display: flex;
@@ -284,6 +285,26 @@ body {
         img {
           max-width: 325px;
         }
+      }
+    }
+  }
+}
+
+.dash-gamepage {
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+  .gamepage-article {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+      max-width: 500px;
+    }
+    h2 {
+    }
+    div {
+      p {
       }
     }
   }

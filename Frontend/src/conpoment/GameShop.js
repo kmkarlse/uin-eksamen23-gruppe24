@@ -7,9 +7,6 @@ export default function GameShop() {
       <section className="gameshop-site">
         <div className="section-header">
           <h2>GAMESHOP</h2>
-          <Link className="button" to="GameShop">
-            Visit Shop
-          </Link>
         </div>
         <article className="gameshop-article">
           {store.map((game) => (

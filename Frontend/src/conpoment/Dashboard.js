@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import GameCard from "./GameCard";
-import FavGameCard from "./FavGameCard";
-import GameShopCard from "./GameShopCard";
+import FavGameCard from "./Cards/FavGameCard";
+import GameCard from "./Cards/GameCard";
+import GameShopCard from "./Cards/GameShopCard";
 import { store, mygames } from "../games";
 
 export default function Dashboard() {

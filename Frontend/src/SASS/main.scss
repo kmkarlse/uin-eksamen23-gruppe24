@@ -188,14 +188,23 @@ body {
       }
 
       .mygames-item {
+        max-height: 395px;
         max-width: 330px;
-        margin: 0 auto;
+        height: 100%;
+        border: 1px solid;
+        padding: 5px;
         background-color: $light-grey;
         margin-top: 10px;
         margin-bottom: 10px;
 
+        h2 {
+          max-height: 100px;
+          height: 100%;
+        }
+
         img {
-          max-width: 325px;
+          max-width: 310px;
+          margin: 5px;
         }
 
         div {
@@ -215,6 +224,38 @@ body {
     .mygames-container {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+
+      article {
+        max-width: 330px;
+        margin: 10px;
+        background-color: $light-grey;
+
+        text-align: center;
+        max-height: 300px;
+        height: 100%;
+
+        h2 {
+          max-height: 65px;
+          height: 100%;
+        }
+
+        img {
+          max-width: 325px;
+        }
+
+        div {
+          display: flex;
+          justify-content: center;
+          background-color: $dark-grey;
+          margin: 5px;
+
+          .p-item {
+            color: $white;
+            margin: 5px;
+          }
+        }
+      }
 
       .mygames-item {
         max-width: 330px;
@@ -304,8 +345,6 @@ body {
     h2 {
     }
     div {
-      p {
-      }
     }
   }
 }

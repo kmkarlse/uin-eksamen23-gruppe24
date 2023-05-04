@@ -1,5 +1,5 @@
 import "./CSS/main.css";
-import Layout from "./conpoment/Layout";
+import Layout from "./conpoment/Layout/Layout";
 import Dashboard from "./conpoment/Dashboard";
 import GameShop from "./conpoment/GameShop";
 import MyFavorites from "./conpoment/MyFavorites";
@@ -17,6 +17,11 @@ function App() {
         <Route path="MyFavorites" element={<MyFavorites mygames={mygames} />} />
         <Route path="MyGames" element={<MyGames mygames={mygames} />} />
         <Route path=":slug" element={<GamePage mygames={mygames} />} />
+        <Route path="mygames/:slug" element={<GamePage mygames={mygames} />} />
+        <Route
+          path="myfavorites/:slug"
+          element={<GamePage mygames={mygames} />}
+        />
       </Route>
     </Routes>
   );

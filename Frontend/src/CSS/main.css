@@ -12,7 +12,8 @@
   font-weight: 400;
 }
 
-.textfont-strong, .textfont-bold {
+.textfont-strong,
+.textfont-bold {
   font-family: "Mulish", sans-serif;
   font-weight: 700;
 }
@@ -21,7 +22,14 @@ body {
   font-size: 18px;
 }
 
-div, article, header, section, aside, span, footer, header {
+div,
+article,
+header,
+section,
+aside,
+span,
+footer,
+header {
   box-sizing: border-box;
 }
 
@@ -34,21 +42,7 @@ div, article, header, section, aside, span, footer, header {
   text-decoration: none;
   margin: 0;
 }
-
-body {
-  box-sizing: border-box;
-  margin: 0 auto;
-}
-body h2 {
-  padding: 10px;
-  margin: 10px;
-}
-body .dash {
-  max-width: 1200px;
-  text-align: center;
-  margin: 0 auto;
-}
-body .dash .button {
+* .button {
   height: 20px;
   color: #ffffff;
   padding: 5px 10px;
@@ -62,9 +56,31 @@ body .dash .button {
   border: 2px solid #212529;
   background: #212529;
 }
-body .dash .button:hover {
+* .button:hover {
   background: #ffffff;
   color: #212529;
+}
+* img {
+  border: 1px solid #000000;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+  position: relative;
+}
+body h2 {
+  padding: 10px;
+  margin: 10px;
+}
+body .dash {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 10px auto;
 }
 body header {
   display: flex;
@@ -85,49 +101,50 @@ body header nav {
   display: flex;
   justify-content: flex-end;
 }
-body .gameshop {
-  background-color: #f3f3f3;
-  padding: 5px;
+body .section-header {
+  display: flex;
+  align-items: center;
+}
+body .gameshop-article {
   max-width: 1200px;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
-  box-shadow: black 12px 12px 43px;
+  box-shadow: 1px 1px 45px #000;
+  border-radius: 25px 25px 25px 25px;
 }
-body .gameshop .section-header {
-  display: flex;
-  align-items: center;
+body .gameshop-article .game-article {
+  margin: 10px;
+  border: 1px solid #000000;
+  padding: 5px;
 }
-body .gameshop .gameshop-article {
-  display: flex;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: space-between;
+body .gameshop-article .game-article img {
+  max-width: 300px;
+  height: 180px;
+  display: block;
+  margin: auto;
 }
-body .gameshop .gameshop-article .game-article {
-  display: flex;
-  align-items: center;
-  margin: 5px;
-}
-body .gameshop .gameshop-article .game-article img {
-  max-width: 200px;
-  height: 275px;
-  margin-right: 20px;
-}
-body .gameshop .gameshop-article .game-article .text-content {
+body .gameshop-article .game-article .text-content {
   display: flex;
   flex-direction: column;
-  height: 275px;
+  justify-content: center;
+  text-align: center;
   margin: 5px;
 }
-body .gameshop .gameshop-article .game-article .text-content h2 {
-  margin: 0;
-  height: 150px;
-  margin-bottom: 10px;
-}
-body .gameshop .gameshop-article .game-article .text-content p {
+body .gameshop-article .game-article .text-content h2 {
   margin: 0;
   margin-bottom: 10px;
 }
-body .gameshop .gameshop-article .game-article .text-content a {
+body .gameshop-article .game-article .text-content div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .gameshop-article .game-article .text-content div p {
+  margin: 3px;
+  margin-bottom: 10px;
+}
+body .gameshop-article .game-article .text-content a {
   margin: 0;
 }
 body .gameshop-site {
@@ -141,165 +158,86 @@ body .gameshop-site .section-header {
   align-items: center;
   max-height: 90px;
 }
-body .gameshop-site .gameshop-article {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  justify-content: space-between;
-}
-body .gameshop-site .gameshop-article .game-article {
-  display: flex;
-  align-items: center;
-  margin: 0px auto;
-  max-width: 390px;
-  height: 355px;
-}
-body .gameshop-site .gameshop-article .game-article img {
-  max-width: 200px;
-  height: 333px;
-}
-body .gameshop-site .gameshop-article .game-article .text-content {
-  display: flex;
-  flex-direction: column;
-  height: 335px;
-  margin: 5px;
-}
-body .gameshop-site .gameshop-article .game-article .text-content h2 {
-  margin: 0;
-  max-height: 200px;
-  height: 100%;
-  margin-bottom: 10px;
-}
-body .gameshop-site .gameshop-article .game-article .text-content p {
-  margin: 0;
-  margin-bottom: 10px;
-}
-body .gameshop-site .gameshop-article .game-article .text-content a {
-  margin: 0;
-}
 body .mygames {
-  float: left;
-  width: 65%;
+  flex: 1 1 70%;
 }
 body .mygames .mygames-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 body .mygames .mygames-container .gamelink {
   margin: 5px;
 }
 body .mygames .mygames-container .mygames-item {
-  max-height: 395px;
-  max-width: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 400px;
+  max-width: 265px;
   height: 100%;
   border: 1px solid;
   padding: 5px;
+  margin: 5px;
   background-color: #f3f3f3;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-body .mygames .mygames-container .mygames-item h2 {
-  max-height: 100px;
-  height: 100%;
 }
 body .mygames .mygames-container .mygames-item img {
-  max-width: 310px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+body .mygames .mygames-container .mygames-item h2 {
+  text-align: center;
+}
+body .mygames .mygames-container .mygames-item div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #232323;
   margin: 5px;
 }
 body .mygames .mygames-container .mygames-item div .p-item {
-  background-color: #232323;
-  color: #ffffff;
-  margin: 3px;
-}
-body .mygames-site {
-  margin: 0 auto;
-}
-body .mygames-site .mygames-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-body .mygames-site .mygames-container article {
-  max-width: 330px;
-  margin: 10px;
-  background-color: #f3f3f3;
-  text-align: center;
-  max-height: 300px;
-  height: 100%;
-}
-body .mygames-site .mygames-container article h2 {
-  max-height: 65px;
-  height: 100%;
-}
-body .mygames-site .mygames-container article img {
-  max-width: 325px;
-}
-body .mygames-site .mygames-container article div {
-  display: flex;
-  justify-content: center;
-  background-color: #232323;
-  margin: 5px;
-}
-body .mygames-site .mygames-container article div .p-item {
-  color: #ffffff;
-  margin: 5px;
-}
-body .mygames-site .mygames-container .mygames-item {
-  max-width: 330px;
-  margin: 0 auto;
-  background-color: #f3f3f3;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-body .mygames-site .mygames-container .mygames-item img {
-  max-width: 325px;
-}
-body .mygames-site .mygames-container .mygames-item div .p-item {
-  background-color: #232323;
   color: #ffffff;
   margin: 3px;
 }
 body aside {
-  float: right;
-  width: 30%;
-  border-left: 1px solid black;
+  flex: 1 1 30%;
   padding-left: 20px;
+  max-width: 300px;
 }
-body aside .favorite-container {
+body aside section {
   display: flex;
   flex-direction: column;
 }
-body aside .favorite-container .favorite-item {
-  background-color: #f3f3f3;
-  margin: 10px auto;
-}
-body aside .favorite-container .favorite-item img {
-  max-width: 330px;
-}
-body aside .favorite-container .favorite-item div {
-  display: flex;
-  justify-content: center;
-}
-body aside .favorite-container .favorite-item div .p-item {
+body aside section .gamelink {
   margin: 5px;
 }
-body .fav-site {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-body .fav-site .favorite-article {
+body aside section .favorite-item {
   display: flex;
-  flex-wrap: wrap;
-}
-body .fav-site .favorite-article .fav-item {
-  max-width: 330px;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 400px;
+  height: 100%;
+  border: 1px solid;
+  padding: 5px;
   background-color: #f3f3f3;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
-body .fav-site .favorite-article .fav-item img {
-  max-width: 325px;
+body aside section .favorite-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+body aside section .favorite-item div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #232323;
+  margin: 5px;
+  border-radius: 25px 25px 25px 25px;
+}
+body aside section .favorite-item div .p-item {
+  margin: 5px;
+  color: #ffffff;
 }
 
 .dash-gamepage {
@@ -315,5 +253,97 @@ body .fav-site .favorite-article .fav-item img {
   width: 100%;
   max-width: 500px;
 }
+.mygames-site {
+  margin: 10px;
+}
+.mygames-site .mygames-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mygames-site .mygames-container .gamelink {
+  margin: 5px;
+}
+.mygames-site .mygames-container .mygames-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 400px;
+  max-width: 290px;
+  height: 100%;
+  border: 1px solid;
+  padding: 5px;
+  margin: 5px;
+  background-color: #f3f3f3;
+}
+.mygames-site .mygames-container .mygames-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.mygames-site .mygames-container .mygames-item h2 {
+  text-align: center;
+  font-size: "Kanit", sans-serif;
+}
+.mygames-site .mygames-container .mygames-item div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #232323;
+  margin: 5px;
+}
+.mygames-site .mygames-container .mygames-item div .p-item {
+  color: #ffffff;
+  margin: 3px;
+}
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvX2V4YW12YXJpYWJsZXMuc2NzcyIsIm1haW4uY3NzIiwiLi4vc2Fzcy9tYWluLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ1Esa0hBQUE7QUFLUjtFQUNJLGdDQUpZO0VBS1osZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUNKSjs7QURPQTtFQUNJLGlDQVhZO0VBWVosZ0JBQUE7QUNKSjs7QURNQTtFQUNJLGlDQWZZO0VBZ0JaLGdCQUFBO0FDSEo7O0FES0E7RUFHSSxlQUFBO0FDSko7O0FEUUE7RUFDSSxzQkFBQTtBQ0xKOztBRFNBO0VBQ0ksNEJBQUE7QUNOSjs7QUMzQkE7RUFDRSxZQUFBO0VBQ0EscUJBQUE7RUFDQSxTQUFBO0FEOEJGOztBQzNCQTtFQUNFLHNCQUFBO0VBQ0EsY0FBQTtBRDhCRjtBQzVCRTtFQUNFLGFBQUE7RUFDQSxZQUFBO0FEOEJKO0FDM0JFO0VBQ0UsaUJGc0NnQjtFRXJDaEIsa0JBQUE7RUFDQSxjQUFBO0FENkJKO0FDMUJJO0VBQ0UsWUFBQTtFQUNBLGNGcUJVO0VFcEJWLGlCQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLHFCQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtBRDRCTjtBQ3pCSTtFQUNFLG1CRk9VO0VFTlYsY0FBQTtBRDJCTjtBQ3ZCRTtFQUNFLGFBQUE7RUFDQSw4QkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0NGN0NZO0VFOENaLG1CQUFBO0VBQ0EseUJGTFk7QUM4QmhCO0FDdkJJO0VBQ0UsU0FBQTtBRHlCTjtBQ3RCSTtFQUNFLGtCQUFBO0VBQ0EsY0ZaVTtBQ29DaEI7QUNyQkk7RUFDRSxhQUFBO0VBQ0EseUJBQUE7QUR1Qk47QUNuQkU7RUFDRSx5QkZyQlk7RUVzQlosWUFBQTtFQUNBLGlCRmRnQjtFRWVoQixjQUFBO0VBQ0EsZ0NBQUE7QURxQko7QUNuQkk7RUFDRSxhQUFB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 */
+main {
+  margin-bottom: 60px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  max-height: 45px;
+}
+footer div {
+  color: #ffffff;
+}
+footer div a {
+  margin: 5px;
+}
+
+@media (max-width: 600px) {
+  .dash {
+    display: flex;
+    flex-direction: column;
+  }
+  .gameshop,
+  .mygames,
+  aside {
+    width: 100%;
+  }
+  aside {
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .dash {
+    flex-direction: column;
+  }
+  .dash .mygames {
+    order: 1;
+    flex: 1 1 auto;
+  }
+  .dash aside {
+    order: 2;
+    flex: 1 1 auto;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvX2V4YW12YXJpYWJsZXMuc2NzcyIsIm1haW4uY3NzIiwiLi4vc2Fzcy9tYWluLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ1Esa0hBQUE7QUFLUjtFQUNJLGdDQUpTO0VBS1QsZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUNKSjs7QURPQTtFQUNJLGlDQVhPO0VBWVAsZ0JBQUE7QUNKSjs7QURNQTs7RUFFSSxpQ0FoQk87RUFpQlAsZ0JBQUE7QUNISjs7QURLQTtFQUdJLGVBQUE7QUNKSjs7QURRQTs7Ozs7Ozs7RUFRSSxzQkFBQTtBQ0xKOztBRFNBO0VBQ0ksNEJBQUE7QUNOSjs7QUNuQ0E7RUFDRSxZQUFBO0VBQ0EscUJBQUE7RUFDQSxTQUFBO0FEc0NGO0FDbkNFO0VBQ0UsWUFBQTtFQUNBLGNGNENJO0VFM0NKLGlCQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLHFCQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtBRHFDSjtBQ2xDRTtFQUNFLG1CRjhCSTtFRTdCSixjQUFBO0FEb0NKO0FDakNFO0VBQ0UseUJBQUE7QURtQ0o7O0FDL0JBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0Esc0JBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FEa0NGO0FDaENFO0VBQ0UsYUFBQTtFQUNBLFlBQUE7QURrQ0o7QUMvQkU7RUFDRSxpQkZrQk87RUVqQlAsYUFBQTtFQUNBLGVBQUE7RUFFQSxrQkFBQTtFQUNBLGlCQUFBO0FEZ0NKO0FDN0JFO0VBQ0UsYUFBQTtFQUNBLDhCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQ0Z2RFM7RUV3RFQsbUJBQUE7RUFDQSx5QkZQSTtBQ3NDUjtBQzdCSTtFQUNFLFNBQUE7QUQrQk47QUM1Qkk7RUFDRSxrQkFBQTtFQUNBLGNGZEU7QUM0Q1I7QUMzQkk7RUFDRSxhQUFBO0VBQ0EseUJBQUE7QUQ2Qk47QUN6QkU7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7QUQyQko7QUN4QkU7RUFDRSxpQkFBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLGNBQUE7RUFDQSw2QkFBQTtFQUNBLGtDQUFBO0FEMEJKO0FDeEJJO0VBQ0UsWUFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtBRDBCTjtBQ3pCTTtFQUNFLGdCQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxZQUFBO0FEMkJSO0FDeEJNO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7QUQwQlI7QUN4QlE7RUFDRSxTQUFBO0VBQ0EsbUJBQUE7QUQwQlY7QUN2QlE7RUFDRSxhQUFBO0VBQ0EsZUFBQTtFQUNBLHVCQUFBO0FEeUJWO0FDeEJVO0VBQ0UsV0FBQTtFQUNBLG1CQUFBO0FEMEJaO0FDdEJRO0VBQ0UsU0FBQTtBRHdCVjtBQ2xCRTtFQUNFLHlCRjVFUztFRTZFVCxZQUFBO0VBQ0EsaUJGckVPO0VFc0VQLG1CQUFBO0FEb0JKO0FDbEJJO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7QURvQk47QUNoQkU7RUFDRSxhQUFBO0FEa0JKO0FDaEJJO0VBQ0UsYUFBQTtFQUNBLGVBQUE7RUFDQSx1QkFBQTtBRGtCTjtBQ2hCTTtFQUNFLFdBQUE7QURrQlI7QUNmTTtFQUNFLGFBQUE7RUFDQSxzQkFBQTtFQUNBLDhCQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EseUJGOUdLO0FDK0hiO0FDZlE7RUFDRSxXQUFBO0VBQ0EsYUFBQTtFQUNBLGlCQUFBO0FEaUJWO0FDZFE7RUFDRSxrQkFBQTtBRGdCVjtBQ2JRO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCRjdIRTtFRThIRixXQUFBO0FEZVY7QUNiVTtFQUNFLGNGbklKO0VFb0lJLFdBQUE7QURlWjtBQ1JFO0VBQ0UsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7QURVSjtBQ1JJO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0FEVU47QUNSTTtFQUNFLFdBQUE7QURVUjtBQ1BNO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsOEJBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLFlBQUE7RUFDQSx5QkYvSks7QUN3S2I7QUNQUTtFQUNFLFdBQUE7RUFDQSxhQUFBO0VBQ0EsaUJBQUE7QURTVjtBQ05RO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsZUFBQTtFQUNBLHlCRjFLRTtFRTJLRixXQUFBO0VBQ0Esa0NBQUE7QURRVjtBQ1BVO0VBQ0UsV0FBQTtFQUNBLGNGakxKO0FDMExSOztBQ0RBO0VBQ0UsaUJBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7QURJRjtBQ0hFO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0FES0o7QUNKSTtFQUNFLFdBQUE7RUFDQSxnQkFBQTtBRE1OO0FDR0E7RUFDRSxZQUFBO0FEREY7QUNHRTtFQUNFLGFBQUE7RUFDQSxlQUFBO0VBQ0EsdUJBQUE7QURESjtBQ0dJO0VBQ0UsV0FBQTtBREROO0FDSUk7RUFDRSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSw4QkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLHlCRmhPTztBQzhOYjtBQ0lNO0VBQ0UsV0FBQTtFQUNBLGFBQUE7RUFDQSxpQkFBQTtBREZSO0FDS007RUFDRSxrQkFBQTtFQUNBLDhCRjlSSztBQzJSYjtBQ01NO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsZUFBQTtFQUVBLHlCRmpQSTtFRWtQSixXQUFBO0FETFI7QUNPUTtFQUNFLGNGdlBGO0VFd1BFLFdBQUE7QURMVjs7QUNZQTtFQUNFLG1CQUFBO0FEVEY7O0FDWUE7RUFDRSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7RUFDQSx5QkZ6UU07RUUwUU4sWUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtBRFRGO0FDV0U7RUFDRSxjRjlRSTtBQ3FRUjtBQ1VJO0VBQ0UsV0FBQTtBRFJOOztBQ2FBO0VBQ0U7SUFDRSxhQUFBO0lBQ0Esc0JBQUE7RURWRjtFQ1lBOzs7SUFHRSxXQUFBO0VEVkY7RUNZQTtJQUNFLGdCQUFBO0VEVkY7QUFDRjtBQ2FBO0VBQ0U7SUFDRSxzQkFBQTtFRFhGO0VDYUU7SUFDRSxRQUFBO0lBQ0EsY0FBQTtFRFhKO0VDY0U7SUFDRSxRQUFBO0lBQ0EsY0FBQTtFRFpKO0FBQ0YiLCJmaWxlIjoibWFpbi5jc3MifQ== */

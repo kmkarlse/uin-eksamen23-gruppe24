@@ -4,11 +4,39 @@
   color: black;
   text-decoration: none;
   margin: 0;
+
+  //styling for knapper hentet fra https://markodenic.com/tools/buttons-generator/
+  .button {
+    height: 20px;
+    color: $white;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #212529;
+    background: #212529;
+  }
+
+  .button:hover {
+    background: $white;
+    color: #212529;
+  }
+
+  img {
+    border: 1px solid $black;
+  }
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
-  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
 
   h2 {
     padding: 10px;
@@ -17,29 +45,11 @@ body {
 
   .dash {
     max-width: $maxwidth;
+    display: flex;
+    flex-wrap: wrap;
+
     text-align: center;
-    margin: 0 auto;
-
-    //styling for knapper hentet fra https://markodenic.com/tools/buttons-generator/
-    .button {
-      height: 20px;
-      color: $white;
-      padding: 5px 10px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      display: inline-block;
-      outline: none;
-      border-radius: 5px;
-      border: 2px solid #212529;
-      background: #212529;
-    }
-
-    .button:hover {
-      background: $white;
-      color: #212529;
-    }
+    margin: 10px auto;
   }
 
   header {
@@ -65,55 +75,54 @@ body {
     }
   }
 
-  .gameshop {
-    background-color: $light-grey;
-    padding: 5px;
-    max-width: $maxwidth;
+  .section-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .gameshop-article {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
-    box-shadow: black 12px 12px 43px;
+    box-shadow: 1px 1px 45px #000;
+    border-radius: 25px 25px 25px 25px;
 
-    .section-header {
-      display: flex;
-      align-items: center;
-    }
+    .game-article {
+      margin: 10px;
+      border: 1px solid $black;
+      padding: 5px;
+      img {
+        max-width: 300px;
+        height: 180px;
+        display: block;
+        margin: auto;
+      }
 
-    .gameshop-article {
-      display: flex;
-      margin-top: 20px;
-      align-items: center;
-      justify-content: space-between;
-
-      .game-article {
+      .text-content {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
         margin: 5px;
 
-        img {
-          max-width: 200px;
-          height: 275px;
-          margin-right: 20px;
+        h2 {
+          margin: 0;
+          margin-bottom: 10px;
         }
 
-        .text-content {
+        div {
           display: flex;
-          flex-direction: column;
-          height: 275px;
-          margin: 5px;
-
-          h2 {
-            margin: 0;
-            height: 150px;
-            margin-bottom: 10px;
-          }
-
+          flex-wrap: wrap;
+          justify-content: center;
           p {
-            margin: 0;
+            margin: 3px;
             margin-bottom: 10px;
           }
+        }
 
-          a {
-            margin: 0;
-          }
+        a {
+          margin: 0;
         }
       }
     }
@@ -130,147 +139,50 @@ body {
       align-items: center;
       max-height: 90px;
     }
-
-    .gameshop-article {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 20px;
-      justify-content: space-between;
-
-      .game-article {
-        display: flex;
-        align-items: center;
-        margin: 0px auto;
-        max-width: 390px;
-        height: 355px;
-
-        img {
-          max-width: 200px;
-          height: 333px;
-        }
-
-        .text-content {
-          display: flex;
-          flex-direction: column;
-          height: 335px;
-          margin: 5px;
-
-          h2 {
-            margin: 0;
-            max-height: 200px;
-            height: 100%;
-            margin-bottom: 10px;
-          }
-
-          p {
-            margin: 0;
-            margin-bottom: 10px;
-          }
-
-          a {
-            margin: 0;
-          }
-        }
-      }
-    }
   }
 
   .mygames {
-    float: left;
-    width: 65%;
-
-    .mygames-container {
-      display: flex;
-      flex-wrap: wrap;
-
-      .gamelink {
-        margin: 5px;
-      }
-
-      .mygames-item {
-        max-height: 395px;
-        max-width: 330px;
-        height: 100%;
-        border: 1px solid;
-        padding: 5px;
-        background-color: $light-grey;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        h2 {
-          max-height: 100px;
-          height: 100%;
-        }
-
-        img {
-          max-width: 310px;
-          margin: 5px;
-        }
-
-        div {
-          .p-item {
-            background-color: $dark-grey;
-            color: $white;
-            margin: 3px;
-          }
-        }
-      }
-    }
-  }
-
-  .mygames-site {
-    margin: 0 auto;
+    flex: 1 1 70%;
 
     .mygames-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
 
-      article {
-        max-width: 330px;
-        margin: 10px;
+      .gamelink {
+        margin: 5px;
+      }
+
+      .mygames-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 400px;
+        max-width: 265px;
+        height: 100%;
+        border: 1px solid;
+        padding: 5px;
+        margin: 5px;
         background-color: $light-grey;
 
-        text-align: center;
-        max-height: 300px;
-        height: 100%;
-
-        h2 {
-          max-height: 65px;
-          height: 100%;
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
         }
 
-        img {
-          max-width: 325px;
+        h2 {
+          text-align: center;
         }
 
         div {
           display: flex;
           justify-content: center;
+          flex-wrap: wrap;
           background-color: $dark-grey;
           margin: 5px;
 
           .p-item {
-            color: $white;
-            margin: 5px;
-          }
-        }
-      }
-
-      .mygames-item {
-        max-width: 330px;
-        margin: 0 auto;
-        background-color: $light-grey;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        img {
-          max-width: 325px;
-        }
-
-        div {
-          .p-item {
-            background-color: $dark-grey;
             color: $white;
             margin: 3px;
           }
@@ -280,51 +192,45 @@ body {
   }
 
   aside {
-    float: right;
-    width: 30%;
-    border-left: 1px solid black;
+    flex: 1 1 30%;
     padding-left: 20px;
+    max-width: 300px;
 
-    .favorite-container {
+    section {
       display: flex;
       flex-direction: column;
 
+      .gamelink {
+        margin: 5px;
+      }
+
       .favorite-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 400px;
+        height: 100%;
+        border: 1px solid;
+        padding: 5px;
         background-color: $light-grey;
-        margin: 10px auto;
 
         img {
-          max-width: 330px;
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
         }
 
         div {
           display: flex;
           justify-content: center;
+          flex-wrap: wrap;
+          background-color: $dark-grey;
+          margin: 5px;
+          border-radius: 25px 25px 25px 25px;
           .p-item {
             margin: 5px;
+            color: $white;
           }
-        }
-      }
-    }
-  }
-
-  .fav-site {
-    max-width: $maxwidth;
-    margin: 0 auto;
-
-    .favorite-article {
-      display: flex;
-      flex-wrap: wrap;
-
-      .fav-item {
-        max-width: 330px;
-        margin: 0 auto;
-        background-color: $light-grey;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        img {
-          max-width: 325px;
         }
       }
     }
@@ -342,9 +248,110 @@ body {
       width: 100%;
       max-width: 500px;
     }
-    h2 {
+  }
+}
+
+.mygames-site {
+  margin: 10px;
+
+  .mygames-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .gamelink {
+      margin: 5px;
     }
-    div {
+
+    .mygames-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-height: 400px;
+      max-width: 290px;
+      height: 100%;
+      border: 1px solid;
+      padding: 5px;
+      margin: 5px;
+      background-color: $light-grey;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: $headerfont;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        background-color: $dark-grey;
+        margin: 5px;
+
+        .p-item {
+          color: $white;
+          margin: 3px;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin-bottom: 60px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  background-color: $black;
+  height: 100%;
+  width: 100%;
+  max-height: 45px;
+
+  div {
+    color: $white;
+    a {
+      margin: 5px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .dash {
+    display: flex;
+    flex-direction: column;
+  }
+  .gameshop,
+  .mygames,
+  aside {
+    width: 100%;
+  }
+  aside {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dash {
+    flex-direction: column;
+
+    .mygames {
+      order: 1;
+      flex: 1 1 auto;
+    }
+
+    aside {
+      order: 2;
+      flex: 1 1 auto;
     }
   }
 }

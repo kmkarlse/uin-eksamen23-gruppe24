@@ -1,15 +1,25 @@
-export default function GameCard({ title, img, genres }) {
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+export default function GameCard({ title, img, genres, game, handleFav }) {
   return (
     <article className="mygames-item">
-      <img alt={title} src={img} />
-      <div>
+      <Link
+        key={game.id}
+        className="gamelink"
+        to={game?.name.replace(/\s/g, "-").toLowerCase()}
+      >
+        <img alt={title} src={img} />
         <h2>{title}</h2>
-        {genres.map((genre, index) => (
-          <p key={index} className="p-item">
-            {genre}
-          </p>
-        ))}
-      </div>
+        <div>
+          {genres.slice(0, 2).map((genre, index) => (
+            <p key={index} className="p-item">
+              {genre.name}
+            </p>
+          ))}
+        </div>
+      </Link>
+      <button onClick={() => handleFav(game.id)}>star</button>
     </article>
   );
 }

@@ -2,58 +2,51 @@ import { Link } from "react-router-dom";
 import FavGameCard from "./Cards/FavGameCard";
 import GameCard from "./Cards/GameCard";
 import GameShopCard from "./Cards/GameShopCard";
-import { store, mygames } from "../games";
 
-export default function Dashboard() {
+export default function Dashboard({ mygames, store, fav, handleFav, buyGame }) {
   return (
     <>
+      <div className="section-header">
+        <h2>GAMESHOP</h2>
+        <Link className="button" to="GameShop">
+          Visit Shop
+        </Link>
+      </div>
+      <GameShopCard store={store} buyGame={buyGame} handleFav={handleFav} />
       <section className="dash">
-        <section className="gameshop">
-          <div className="section-header">
-            <h2>GAMESHOP</h2>
-            <Link className="button" to="GameShop">
-              Visit Shop
-            </Link>
-          </div>
-          <GameShopCard store={store} />
-        </section>
         <section className="mygames">
-          <h2>My Games-Library {mygames.length} games</h2>
+          <h2>My Games-Library {mygames.slice(0, 4).length} games</h2>
           <article className="mygames-container">
-            {mygames.map((game) => (
-              <Link
+            {mygames.slice(0, 4).map((game) => (
+              <GameCard
                 key={game.id}
-                className="gamelink"
-                to={game?.title.replace(/\s/g, "-").toLowerCase()}
-              >
-                <GameCard
-                  mygames={mygames}
-                  title={game.title}
-                  img={game.img}
-                  genres={game.genres}
-                />
-              </Link>
+                game={game}
+                handleFav={handleFav}
+                title={game.name}
+                img={game.background_image}
+                genres={game.genres}
+              />
             ))}
           </article>
         </section>
         <aside>
           <h2>MY FAVORITES</h2>
-          {mygames
-            .filter((game) => game.fav)
-            .map((game) => (
+          <section>
+            {fav.map((game) => (
               <Link
                 key={game.id}
                 className="gamelink"
-                to={game?.title.replace(/\s/g, "-").toLowerCase()}
+                to={game?.name.replace(/\s/g, "-").toLowerCase()}
               >
                 <FavGameCard
-                  mygames={mygames}
-                  title={game.title}
-                  img={game.img}
+                  key={game.id}
+                  title={game.name}
+                  img={game.background_image}
                   genres={game.genres}
                 />
               </Link>
             ))}
+          </section>
         </aside>
       </section>
     </>

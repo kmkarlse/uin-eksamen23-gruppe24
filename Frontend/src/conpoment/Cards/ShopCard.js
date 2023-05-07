@@ -1,15 +1,15 @@
-export default function FavGameCard({ title, img, genres }) {
+export default function ShopCard({ title, img, genres }) {
   return (
-    <article className="favorite-item">
+    <article className="game-article">
+      <img alt={title} src={img} />
       <h2>{title}</h2>
-      <div>
+      <div className="text-content">
         {genres.map((genre, index) => (
           <p key={index} className="p-item">
             {genre.name}
           </p>
         ))}
       </div>
-      <img alt={title} src={img}></img>
     </article>
   );
 }

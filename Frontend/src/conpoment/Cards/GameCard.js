@@ -21,8 +21,6 @@ export default function GameCard({ game, handleFav }) {
     fetchGame();
   }, [gameId]);
 
-  console.log(game);
-
   return (
     <article className="mygames-item">
       <Link

@@ -10,14 +10,9 @@ export default function MyFavorites({ fav }) {
           <Link
             key={game.id}
             className="gamelink"
-            to={game?.name.replace(/\s/g, "-").toLowerCase()}
+            to={game?.game_title.replace(/\s/g, "-").toLowerCase()}
           >
-            <FavoritesCard
-              fav={fav}
-              title={game.name}
-              img={game.background_image}
-              genres={game.genres}
-            />
+            <FavoritesCard fav={fav} game={game} />
           </Link>
         ))}
       </article>

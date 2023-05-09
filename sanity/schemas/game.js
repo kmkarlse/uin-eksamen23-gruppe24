@@ -9,7 +9,7 @@ export default {
       title: 'Game-Name',
     },
     {
-      name: 'api-id',
+      name: 'id',
       type: 'number',
       title: 'API-Id',
     },
@@ -37,10 +37,15 @@ export default {
       title: 'Favorite',
     },
     {
-      name: 'genre',
-      title: 'genre',
-      type: 'reference',
-      to: [{type: 'genres'}],
+      name: 'genres',
+      title: 'genres',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'genres'}],
+        },
+      ],
     },
   ],
 }

@@ -8,7 +8,7 @@ export default function GameShop({ store }) {
       <h2>GAMESHOP</h2>
       <article className="mygames-container">
         {newestTen?.map((game) => (
-          <ShopItemCard game={game} />
+          <ShopItemCard key={game.id} game={game} />
         ))}
       </article>
     </section>

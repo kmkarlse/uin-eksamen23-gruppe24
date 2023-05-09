@@ -7,37 +7,38 @@ import MyGames from "./conpoment/pages/MyGames";
 import { Routes, Route } from "react-router-dom";
 import GamePage from "./conpoment/pages/GamePage";
 import { useState, useEffect } from "react";
+import { fetchAllGames } from "./lib/sanity/gameServices";
+import GameShopPage from "./conpoment/pages/GameShopPage";
+//import PrivateRoute from "./conpoment/PrivateRoute";
+//import LoginForm from "./conpoment/LoginForm";
 
-//d96a5960ac5a4d588f77fe1b388d2021
+const GAMES_API =
+  "https://api.rawg.io/api/games?key=d96a5960ac5a4d588f77fe1b388d2021";
 
 function App() {
+  //const [authenticated, setAuthenticated] = useState(false);
   const [mygames, setMyGames] = useState([]);
+  const [gamesCounter, setGamesCounter] = useState(0);
   const [store, setStore] = useState([]);
+  const [fav, setFav] = useState([]);
+
+  const getGames = async () => {
+    const data = await fetchAllGames();
+
+    setMyGames(data.games);
+    setGamesCounter(data.count);
+  };
 
   useEffect(() => {
-    async function fetchGames() {
-      try {
-        const response = await fetch(
-          "https://api.rawg.io/api/games?key=d96a5960ac5a4d588f77fe1b388d2021"
-        );
-        const data = await response.json();
-        setStore(data.results);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    fetchGames();
+    getGames();
   }, []);
 
   useEffect(() => {
     async function fetchGames() {
       try {
-        const response = await fetch(
-          "https://api.rawg.io/api/games?key=d96a5960ac5a4d588f77fe1b388d2021"
-        );
+        const response = await fetch(GAMES_API);
         const data = await response.json();
-        setMyGames(data.results);
+        setStore(data.results);
       } catch (error) {
         console.error(error);
       }
@@ -51,14 +52,17 @@ function App() {
     (a, b) => new Date(b.released) - new Date(a.released)
   );
 
-  const catagoryFilter = mygames.filter((cat) =>
-    cat.genres.some((cat) => cat.slug.includes("action"))
+  const catagoryFilter = mygames.filter((game) =>
+    game.genres.some((genre) => genre.current.includes("adventure"))
   );
 
-  const [fav, setFav] = useState([]);
+  useEffect(() => {
+    const favFromSanity = mygames.filter((game) => game.favorite === true);
+    setFav(favFromSanity);
+  }, [mygames]);
 
   const handleFav = (id) => {
-    const favGame = mygames.filter((game) => game.id === id)[0];
+    const favGame = mygames?.filter((game) => game?.id === id)[0];
     setFav(mygames.filter((game) => game.id !== id));
     setFav([...fav, favGame]);
   };
@@ -74,8 +78,6 @@ function App() {
     }
   }, []);
 
-  console.log(fav);
-
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -88,22 +90,27 @@ function App() {
               mygames={mygames}
               catagoryFilter={catagoryFilter}
               store={latestRelease}
+              gamesCounter={gamesCounter}
             />
           }
         />
         <Route path="GameShop" element={<GameShop store={latestRelease} />} />
         <Route
           path="GameShop/:slug"
-          element={<GamePage store={latestRelease} />}
+          element={<GameShopPage store={latestRelease} />}
         />
         <Route path="MyFavorites" element={<MyFavorites fav={fav} />} />
         <Route
           path="MyGames"
           element={
-            <MyGames catagoryFilter={catagoryFilter} handleFav={handleFav} />
+            <MyGames
+              catagoryFilter={catagoryFilter}
+              gamesCounter={gamesCounter}
+              handleFav={handleFav}
+            />
           }
         />
-        <Route path=":slug" element={<GamePage mygames={mygames} />} />
+        <Route path="/:slug" element={<GamePage mygames={mygames} />} />
         <Route path="mygames/:slug" element={<GamePage mygames={mygames} />} />
         <Route
           path="myfavorites/:slug"
@@ -115,3 +122,67 @@ function App() {
 }
 
 export default App;
+
+/*return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route
+          path="/login"
+          element={<LoginForm setAuthenticated={setAuthenticated} />}
+        />
+        <PrivateRoute
+          element={
+            <Dashboard
+              path="Dashboard"
+              fav={fav}
+              handleFav={handleFav}
+              mygames={mygames}
+              catagoryFilter={catagoryFilter}
+              store={latestRelease}
+              gamesCounter={gamesCounter}
+              authenticated={authenticated}
+            />
+          }
+        />
+        <PrivateRoute
+          path="GameShop"
+          element={
+            <GameShop store={latestRelease} authenticated={authenticated} />
+          }
+        />
+        <PrivateRoute
+          path="GameShop/:slug"
+          element={
+            <GameShopPage store={latestRelease} authenticated={authenticated} />
+          }
+        />
+        <PrivateRoute
+          path="MyFavorites"
+          element={<MyFavorites fav={fav} authenticated={authenticated} />}
+        />
+        <PrivateRoute
+          path="MyGames"
+          element={
+            <MyGames
+              catagoryFilter={catagoryFilter}
+              gamesCounter={gamesCounter}
+              handleFav={handleFav}
+              authenticated={authenticated}
+            />
+          }
+        />
+        <PrivateRoute
+          path="/:slug"
+          element={<GamePage mygames={mygames} authenticated={authenticated} />}
+        />
+        <PrivateRoute
+          path="mygames/:slug"
+          element={<GamePage mygames={mygames} authenticated={authenticated} />}
+        />
+        <PrivateRoute
+          path="myfavorites/:slug"
+          element={<GamePage mygames={mygames} authenticated={authenticated} />}
+        />
+      </Route>
+    </Routes>
+  ); */

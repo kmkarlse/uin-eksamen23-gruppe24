@@ -11,10 +11,6 @@ export default function MyGames({ catagoryFilter, handleFav }) {
             handleFav={handleFav}
             game={game}
             catagoryFilter={catagoryFilter}
-            title={game.name}
-            img={game.background_image}
-            genres={game.genres}
-            store={game.stores}
           />
         ))}
       </article>

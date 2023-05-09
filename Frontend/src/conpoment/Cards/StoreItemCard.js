@@ -26,8 +26,8 @@ export default function StoreItemCard({ game, handleFav }) {
   }, [game_pk]);
 
   return (
-    <article key={game.id} className="game-article">
-      <img alt={game.name} src={game?.background_image}></img>
+    <article key={game?.id} className="game-article">
+      <img alt={game?.name} src={game?.background_image}></img>
       <div className="text-content">
         <h2>{game?.name}</h2>
         <div>
@@ -35,7 +35,7 @@ export default function StoreItemCard({ game, handleFav }) {
             <p key={genre.id}>{genre?.name}</p>
           ))}
         </div>
-        <button onClick={() => handleFav(game.id)}>star</button>
+        <button onClick={() => handleFav(game?.id)}>star</button>
         <Link to={gameStoreDetail?.url} className="button">
           Kjøp
         </Link>

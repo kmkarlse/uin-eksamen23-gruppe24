@@ -12,12 +12,12 @@ export default function Layout() {
         <Outlet />
       </main>
       <footer>
-        <div>
-          RAWG is the source for the data/ API on this site:
+        <article>
+          RAWG is used on this site:
           <Link to="https://rawg.io/apidocs" className="button">
             RAWG apiDoc
           </Link>
-        </div>
+        </article>
       </footer>
     </>
   );

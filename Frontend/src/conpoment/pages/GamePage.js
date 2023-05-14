@@ -50,7 +50,7 @@ export default function GamePage({ mygames }) {
         <img alt={game?.game_title} src={gameFromApi?.background_image} />
         <h2>{game?.game_title}</h2>
         <div className="game-info">
-          Kategori:
+          <h3>Kategori:</h3>
           {game?.genres?.map((genre, index) => (
             <p key={index}>{genre.current}</p>
           ))}

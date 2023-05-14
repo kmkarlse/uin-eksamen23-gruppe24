@@ -4,22 +4,14 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'name',
-      title: 'Name',
+      name: 'username',
+      title: 'Username',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'email',
       title: 'Email',
       type: 'string',
-      validation: (Rule) => Rule.required().email(),
-    },
-    {
-      name: 'password',
-      title: 'Password',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
     },
   ],
 }

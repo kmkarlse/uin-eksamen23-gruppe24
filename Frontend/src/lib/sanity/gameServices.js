@@ -27,3 +27,12 @@ export const fetchAGame = async (slug) => {
 
   return data;
 };
+
+export const fetchUser = async (username) => {
+  const data = await client.fetch(
+    `*[_type == "user" && (email == $username)]`,
+    { username }
+  );
+
+  return data;
+};

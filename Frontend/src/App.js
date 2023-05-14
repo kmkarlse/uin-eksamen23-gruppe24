@@ -9,6 +9,7 @@ import GamePage from "./conpoment/pages/GamePage";
 import { useState, useEffect } from "react";
 import { fetchAllGames } from "./lib/sanity/gameServices";
 import GameShopPage from "./conpoment/pages/GameShopPage";
+import LogIn from "./conpoment/LogIn";
 //import PrivateRoute from "./conpoment/PrivateRoute";
 //import LoginForm from "./conpoment/LoginForm";
 
@@ -80,11 +81,13 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route index element={<LogIn />} />
+      <Route element={<Layout />}>
         <Route
-          index
+          path="/dash"
           element={
             <Dashboard
+              path="dashboard"
               fav={fav}
               handleFav={handleFav}
               mygames={mygames}
@@ -122,67 +125,3 @@ function App() {
 }
 
 export default App;
-
-/*return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route
-          path="/login"
-          element={<LoginForm setAuthenticated={setAuthenticated} />}
-        />
-        <PrivateRoute
-          element={
-            <Dashboard
-              path="Dashboard"
-              fav={fav}
-              handleFav={handleFav}
-              mygames={mygames}
-              catagoryFilter={catagoryFilter}
-              store={latestRelease}
-              gamesCounter={gamesCounter}
-              authenticated={authenticated}
-            />
-          }
-        />
-        <PrivateRoute
-          path="GameShop"
-          element={
-            <GameShop store={latestRelease} authenticated={authenticated} />
-          }
-        />
-        <PrivateRoute
-          path="GameShop/:slug"
-          element={
-            <GameShopPage store={latestRelease} authenticated={authenticated} />
-          }
-        />
-        <PrivateRoute
-          path="MyFavorites"
-          element={<MyFavorites fav={fav} authenticated={authenticated} />}
-        />
-        <PrivateRoute
-          path="MyGames"
-          element={
-            <MyGames
-              catagoryFilter={catagoryFilter}
-              gamesCounter={gamesCounter}
-              handleFav={handleFav}
-              authenticated={authenticated}
-            />
-          }
-        />
-        <PrivateRoute
-          path="/:slug"
-          element={<GamePage mygames={mygames} authenticated={authenticated} />}
-        />
-        <PrivateRoute
-          path="mygames/:slug"
-          element={<GamePage mygames={mygames} authenticated={authenticated} />}
-        />
-        <PrivateRoute
-          path="myfavorites/:slug"
-          element={<GamePage mygames={mygames} authenticated={authenticated} />}
-        />
-      </Route>
-    </Routes>
-  ); */

@@ -10,14 +10,11 @@ import { useState, useEffect } from "react";
 import { fetchAllGames } from "./lib/sanity/gameServices";
 import GameShopPage from "./conpoment/pages/GameShopPage";
 import LogIn from "./conpoment/LogIn";
-//import PrivateRoute from "./conpoment/PrivateRoute";
-//import LoginForm from "./conpoment/LoginForm";
 
 const GAMES_API =
   "https://api.rawg.io/api/games?key=d96a5960ac5a4d588f77fe1b388d2021";
 
 function App() {
-  //const [authenticated, setAuthenticated] = useState(false);
   const [mygames, setMyGames] = useState([]);
   const [gamesCounter, setGamesCounter] = useState(0);
   const [store, setStore] = useState([]);

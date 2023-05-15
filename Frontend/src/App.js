@@ -50,6 +50,7 @@ function App() {
     (a, b) => new Date(b.released) - new Date(a.released)
   );
 
+  //https://stackoverflow.com/questions/51461302/react-js-filter-an-array-by-a-string
   const catagoryFilter = mygames.filter((game) =>
     game.genres.some((genre) => genre.current.includes("adventure"))
   );

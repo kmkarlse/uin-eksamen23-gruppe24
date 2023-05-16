@@ -26,8 +26,10 @@ export default function StoreItemCard({ game, handleFav }) {
   }, [game_pk]);
 
   return (
-    <article key={game?.id} className="game-article">
-      <img alt={game?.name} src={game?.background_image}></img>
+    <article className="game-article">
+      <Link key={game.id} to={game?.name.replace(/\s/g, "-").toLowerCase()}>
+        <img alt={game?.name} src={game?.background_image}></img>
+      </Link>
       <div className="text-content">
         <h2>{game?.name}</h2>
         <div>

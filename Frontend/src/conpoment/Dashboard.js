@@ -15,7 +15,7 @@ export default function Dashboard({
     <>
       <div className="section-header">
         <h2>GAMESHOP</h2>
-        <Link className="button" to="GameShop">
+        <Link className="button" to="/GameShop">
           Visit Shop
         </Link>
       </div>

@@ -25,10 +25,6 @@ export default function GamePage({ mygames }) {
       }
     }
 
-    fetchGame();
-  }, [gameId]);
-
-  useEffect(() => {
     async function fetchGameStoreDetail() {
       try {
         const response = await fetch(
@@ -41,6 +37,7 @@ export default function GamePage({ mygames }) {
       }
     }
 
+    fetchGame();
     fetchGameStoreDetail();
   }, [gameId]);
 

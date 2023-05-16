@@ -111,7 +111,7 @@ function App() {
             />
           }
         />
-        <Route path="/:slug" element={<GamePage mygames={mygames} />} />
+        <Route path="dash/:slug" element={<GamePage mygames={mygames} />} />
         <Route path="mygames/:slug" element={<GamePage mygames={mygames} />} />
         <Route
           path="myfavorites/:slug"

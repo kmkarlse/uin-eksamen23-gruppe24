@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { fetchUser } from "../lib/sanity/gameServices";
+import { useNavigate } from "react-router-dom";
 
 export default function LogIn() {
   const [username, setUsername] = useState("");
+  //https://reactrouter.com/en/main/hooks/use-navigate
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -12,12 +15,12 @@ export default function LogIn() {
 
       if (user.length > 0) {
         localStorage.setItem("user", JSON.stringify(user));
-        window.location.href = "/dash";
+        navigate("/dash");
       } else {
         console.error("feil passord eller brukernav");
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
